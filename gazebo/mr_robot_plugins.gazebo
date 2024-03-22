@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mr_robot">
+
+    <gazebo>
+        <static>false</static>
+    </gazebo>
+
+    <!-- .....................MULTI WHEEL DIFF DRIVE ................................... -->
+
+    <gazebo>
+        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+            <ros>
+                <remapping>cmd_vel:=cmd_vel</remapping>
+                <remapping>odom:=odom</remapping>
+            </ros>
+            <legacy_mode>false</legacy_mode>
+            <update_rate>50.0</update_rate>
+            <left_joint>Revolute_33</left_joint>
+            <right_joint>Revolute_34</right_joint>
+            <wheel_separation>0.199</wheel_separation>
+            <wheel_diameter>0.1070</wheel_diameter>
+            <robot_base_frame>base_link</robot_base_frame>
+            <command_topic>cmd_vel</command_topic>
+            <odometry_topic>odom</odometry_topic>
+            <odometry_frame>odom</odometry_frame>
+            <tf_topic>tf</tf_topic>
+            <publish_wheel_tf>true</publish_wheel_tf>
+            <publish_odom>true</publish_odom>
+            <max_wheel_acceleration>5.0</max_wheel_acceleration>
+        </plugin>
+    </gazebo>
+
+
+
+        
+
+</robot>
